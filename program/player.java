@@ -45,3 +45,15 @@ class Player {
     public void incrementRoundsWon() {
         roundsWon++;
     }
+     public String getUserInput(Scanner in, String msg) {
+        System.out.print(msg);
+        try {
+            if(in.hasNextLine()) {
+                choice = in.nextLine();
+            }
+        } catch(Exception e) {
+            System.out.println(e);
+        }
+        return choice;
+    }
+}
