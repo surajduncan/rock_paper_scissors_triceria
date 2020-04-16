@@ -81,3 +81,23 @@ class RockPapersScissors {
             }
         } while(!stop);
     }
+      public static void main(String args[]) {
+        // Set players.
+        p1 = new Player("Player 1");
+        p2 = new Player("Player 2");
+        
+        players[0] = p1;
+        players[1] = p2;
+        
+        in = new Scanner(System.in);
+        
+        // Run the main program loop.
+        try {
+            run();
+        } catch(Exception e) {
+            System.out.println(e);
+        } finally {
+            in.close();
+        }
+    }
+}
