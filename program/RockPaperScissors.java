@@ -43,3 +43,41 @@ class RockPapersScissors {
         }
         return false;
     }
+    // Runs RockPaperScissors.
+    private static void run() {
+        // Main program loop.
+        do { 
+            for(Player p: players) {
+                System.out.println(p.getName() + "'s turn");
+                p.setChoice(p.getUserInput(in, msg1));
+            }
+            
+            // Handles a tie.
+            if(p1.getChoice().equals(p2.getChoice())) {
+                System.out.println("Tie!");
+                continue;
+            }
+            
+            // Handle p1/p2 win.
+            if(isWin(p1, p2)) {
+                System.out.println(p1.getChoice() + 
+                        " beats " + p2.getChoice());
+                p1.incrementRoundsWon();
+            } else if(isWin(p2, p1)) {
+                System.out.println(p2.getChoice() + 
+                        " beats " + p1.getChoice());
+                p2.incrementRoundsWon();
+            }
+            
+            System.out.println();
+            
+            // Handles game completion.
+            if(p1.getRoundsWon() == limit) {
+                System.out.println(p1.getName() + " wins!");
+                stop = true;
+            } else if(p2.getRoundsWon() == limit){
+                System.out.println(p2.getName() + " wins!");
+                stop = true;
+            }
+        } while(!stop);
+    }
