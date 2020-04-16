@@ -31,3 +31,17 @@ class Player {
     public void setName(String n) {
         name = n.toLowerCase();
     }
+    // Set Player choice.
+    public void setChoice(String c) {
+        choice = c.toLowerCase();
+    }
+    
+    // Set roundsWon.
+    public void setRoundsWon(int rw) {
+        roundsWon = rw;
+    }
+    
+    // Increment RoundsWon.
+    public void incrementRoundsWon() {
+        roundsWon++;
+    }
